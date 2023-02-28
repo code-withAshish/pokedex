@@ -208,6 +208,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iarna/toml@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@iarna/toml@npm:2.2.5"
+  checksum: b63b2b2c4fd67969a6291543ada0303d45593801ee744b60f5390f183c03d9192bc67a217abb24be945158f1935f02840d9ffff40c0142aa171b5d3b6b6a3ea5
+  languageName: node
+  linkType: hard
+
 "@jridgewell/resolve-uri@npm:3.1.0":
   version: 3.1.0
   resolution: "@jridgewell/resolve-uri@npm:3.1.0"
@@ -351,6 +358,19 @@ __metadata:
   peerDependencies:
     "@sveltejs/kit": ^1.0.0
   checksum: 7feeb24f5253b3ec4768c130f3498614e26d146e5b45560d5f3f8e3345a821f1c24fff578348fd756625af484f5b1079d33f6ecd1d43d395a192d2d193b5ab0f
+  languageName: node
+  linkType: hard
+
+"@sveltejs/adapter-netlify@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "@sveltejs/adapter-netlify@npm:2.0.5"
+  dependencies:
+    "@iarna/toml": ^2.2.5
+    esbuild: ^0.16.3
+    set-cookie-parser: ^2.5.1
+  peerDependencies:
+    "@sveltejs/kit": ^1.5.0
+  checksum: 83799f95bf2af53daffb21b8d3c3102fe498e9cab69bc77b8a6b923ca82045cfcb3169d5b55ec154dbd785f9035d63530cbc91c54d66fad796af974c31b20788
   languageName: node
   linkType: hard
 
@@ -2538,6 +2558,7 @@ __metadata:
   dependencies:
     "@prisma/client": 4.10.1
     "@sveltejs/adapter-auto": ^2.0.0
+    "@sveltejs/adapter-netlify": ^2.0.5
     "@sveltejs/adapter-vercel": ^2.2.0
     "@sveltejs/kit": ^1.5.0
     "@typescript-eslint/eslint-plugin": ^5.45.0

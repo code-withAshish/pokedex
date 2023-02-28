@@ -2,7 +2,6 @@ import { prisma } from "$lib/db";
 import type { PageServerLoad } from "./$types";
 
 
-export const prerender = true
 export const load = (async () => {
 
     return {
@@ -18,7 +17,8 @@ export const load = (async () => {
                         VoteAgainst: true
                     }
                 }
-            }
+            },
+            take: 20
         })
     }
 }) satisfies PageServerLoad
