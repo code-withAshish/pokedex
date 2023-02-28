@@ -68,7 +68,7 @@
 				<span class="min-w-full">Loading...</span>
 			</div>
 		{:then pokedata}
-			<div class="flex flex-col items-center justify-center gap-5">
+			<div class="flex flex-col items-center justify-center gap-2 md:gap-5">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
 					id="poke1"
@@ -81,7 +81,7 @@
 			</div>
 			<div class="p-8 text-5xl">OR</div>
 
-			<div class="flex flex-col items-center justify-center gap-5">
+			<div class="flex flex-col items-center justify-center gap-2 md:gap-5">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div
 					id="poke2"
@@ -94,6 +94,10 @@
 			</div>
 		{/await}
 	</div>
+
+	<a href="/results"
+		><button class="p-2 bg-blue-500 m-2 rounded-md shadow-lg">See Results</button></a
+	>
 </main>
 
 <style>
