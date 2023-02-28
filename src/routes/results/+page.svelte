@@ -28,29 +28,23 @@
 					<table class="min-w-full text-center">
 						<thead class="border-b">
 							<tr>
-								<th scope="col" class="text-md font-medium text-gray-900 px-6 py-4"> Rank</th>
-								<th scope="col" class="text-md font-medium text-gray-900 px-6 py-4"> Name </th>
-								<th scope="col" class="text-md font-medium text-gray-900 px-6 py-4"> Sprite </th>
-								<th scope="col" class="text-md font-medium text-gray-900 px-6 py-4"> Percent</th>
+								<th scope="col" class="text-md font-medium  px-6 py-4"> Rank</th>
+								<th scope="col" class="text-md font-medium px-6 py-4"> Name </th>
+								<th scope="col" class="text-md font-medium  px-6 py-4"> Sprite </th>
+								<th scope="col" class="text-md font-medium  px-6 py-4"> Percent</th>
 							</tr>
 						</thead>
 						<tbody>
 							{#each data.data as { name, spriteUrl, _count }, i}
 								<tr class="border-b">
-									<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
-										>{i + 1}</td
-									>
-									<td
-										class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap capitalize"
-									>
+									<td class="px-6 py-4 whitespace-nowrap text-sm font-medium ''">{i + 1}</td>
+									<td class=" font-light px-6 py-4 whitespace-nowrap capitalize">
 										{name}
 									</td>
-									<td
-										class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex item justify-center"
-									>
+									<td class="font-light px-6 py-4 whitespace-nowrap flex item justify-center">
 										<img src={spriteUrl} alt={'name'} class="h-16 w-16" /></td
 									>
-									<td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+									<td class="font-light px-6 py-4 whitespace-nowrap"
 										>{generateCountPercent(_count).toFixed(2)}%</td
 									>
 								</tr>
@@ -62,3 +56,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	:global(body) {
+		@apply bg-gray-800 text-white;
+	}
+</style>
