@@ -1,6 +1,0 @@
-{
-	"runtime": "nodejs16.x",
-	"handler": "home/ashish/Desktop/Personal_Projects/pokedex/.svelte-kit/vercel-tmp/index.js",
-	"launcherType": "Nodejs",
-	"experimentalResponseStreaming": false
-}
