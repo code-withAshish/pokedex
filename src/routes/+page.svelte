@@ -3,9 +3,19 @@
 		poke1: { id: number; name: string; img: string };
 		poke2: { id: number; name: string; img: string };
 	}
-
+	const getRandomNumber: (notThisOne?: number) => number = (notThisOne) => {
+		const pokeDexNumber = Math.floor(Math.random() * (1008 - 1) + 1);
+		if (pokeDexNumber !== notThisOne) return pokeDexNumber;
+		return getRandomNumber(notThisOne);
+	};
 	async function updatePokeData() {
-		const res = await fetch('/api/getPokemon');
+		const id1 = getRandomNumber();
+		const id2 = getRandomNumber(id1);
+		const params = new URLSearchParams([
+			['id1', `${id1}`],
+			['id2', `${id2}`]
+		]).toString();
+		const res = await fetch(`/api/getPokemon?${params}`);
 		const data: APIdata = await res.json();
 		if (res.ok) {
 			return { poke1: data.poke1, poke2: data.poke2 };

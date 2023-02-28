@@ -1,0 +1,58 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/results",
+			"dest": "/results/"
+		},
+		{
+			"src": "/results/",
+			"status": 308,
+			"headers": {
+				"Location": "/results"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/?$",
+			"dest": "/__root__?__pathname=/"
+		},
+		{
+			"src": "^/?/__data.json$",
+			"dest": "/__root__/__data.json?__pathname=/"
+		},
+		{
+			"src": "^/api/castVote/?$",
+			"dest": "/api/castVote?__pathname=/api/castVote"
+		},
+		{
+			"src": "^/api/castVote/?/__data.json$",
+			"dest": "/api/castVote/__data.json?__pathname=/api/castVote"
+		},
+		{
+			"src": "^/api/getPokemon/?$",
+			"dest": "/api/getPokemon?__pathname=/api/getPokemon"
+		},
+		{
+			"src": "^/api/getPokemon/?/__data.json$",
+			"dest": "/api/getPokemon/__data.json?__pathname=/api/getPokemon"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"results.html": {
+			"path": "results"
+		}
+	}
+}
